@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velixir - Your Scent, Your Story</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="logo">Velixir</div>
+            <nav id="desktopNav">
+                <a href="#home">Beranda</a>
+                <a href="#catalog">Catalog</a>
+            </nav>
+            <div class="header-actions">
+                <button class="cart-btn" onclick="toggleCart()">
+                    <svg class="icon" viewBox="0 0 24 24">
+                        <path d="M9 2a1 1 0 0 0-1 1v1H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V5a1 1 0 0 0-1-1h-4V3a1 1 0 0 0-1-1H9z"/>
+                        <circle cx="9" cy="9" r="1"/>
+                        <circle cx="15" cy="9" r="1"/>
+                    </svg>
+                    <span class="cart-badge" id="cartBadge">0</span>
+                </button>
+                <button class="hamburger" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-nav" id="mobileNav">
+            <a href="#home" onclick="toggleMobileMenu()">Beranda</a>
+            <a href="#catalog" onclick="toggleMobileMenu()">Catalog</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-icon">💎</div>
+        <h1>VELIXIR</h1>
+        <p>Your Scent, Your Story</p>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section" id="catalog">
+        <!-- Unisex Collection -->
+        <div class="collection">
+            <h2 class="collection-title">UNISEX</h2>
+            <div class="collection-line"></div>
+            <div class="products-grid" id="unisexProducts"></div>
+        </div>
+
+        <!-- Men Collection -->
+        <div class="collection">
+            <h2 class="collection-title">MAN COLLECTION</h2>
+            <div class="collection-line"></div>
+            <div class="products-grid" id="menProducts"></div>
+        </div>
+
+        <!-- Women Collection -->
+        <div class="collection">
+            <h2 class="collection-title">WOMEN COLLECTION</h2>
+            <div class="collection-line"></div>
+            <div class="products-grid" id="womenProducts"></div>
+        </div>
+    </section>
+
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Keranjang</h2>
+            <button class="close-cart" onclick="toggleCart()">×</button>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-total" id="cartTotal" style="display: none;">
+            <div class="total-price">
+                <span>Total:</span>
+                <span id="totalPrice">Rp 0</span>
+            </div>
+            <button class="checkout-btn">Checkout</button>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
